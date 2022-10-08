@@ -14,11 +14,7 @@ public class SoundManager : MonoBehaviour
     public List<AudioSource>fuentes;
     private void Awake()
     {
-        //Los distintos eventos que estan subcritos al Soundmanager 
-        Pajaro.OnSoundVolar += PlaySound;
-        Goal.onSoundspoints+= PlaySound;
-        GameManager.onSoundChoque+= PlaySound;
-        GameManager.onSounMenu += PlaySound;
+      
         AudioSource fuente1 =gameObject.GetComponent<AudioSource>();
     
         fuentes.Add(fuente1);

@@ -45,10 +45,7 @@ public class UIManager : MonoBehaviour
                 
                 interfaces[1].SetActive(true);
                 break;
-            //4  Caso ScoreBoard
-            case GameManager.Estado.ScoreBoard:
-                interfaces[2].SetActive(true);
-                break;
+          
             //Caso pausa 
             case GameManager.Estado.Pause:
                 interfaces[3].SetActive(true);
