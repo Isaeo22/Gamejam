@@ -48,10 +48,10 @@ public class UIManager : MonoBehaviour
           
             //Caso pausa 
             case GameManager.Estado.Pause:
-                interfaces[3].SetActive(true);
+                interfaces[2].SetActive(true);
                 break;
             case GameManager.Estado.GameOver:
-                interfaces[4].SetActive(true);
+                interfaces[3].SetActive(true);
                 break;
             default: break;
             

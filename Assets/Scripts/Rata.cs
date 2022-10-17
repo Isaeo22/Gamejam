@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class Rata : MonoBehaviour
     }
     public float moveSpeed = 10f;
     public float jumpHeight = 5f;
+
+    private void Awake()
+    {
+        GameManager.onUpdateGameState += OnGameStateChange;
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,4 +36,15 @@ public class Rata : MonoBehaviour
         }
       
     }
+    public void OnGameStateChange(GameManager.Estado estado)
+    {
+        if (estado == GameManager.Estado.Game)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+}
 }
