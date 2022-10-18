@@ -5,46 +5,63 @@ using UnityEngine;
 
 public class Rata : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Range(1, 10)] public float velocidadRata;
+    Rigidbody2D rbRata;
+    SpriteRenderer srRata;
+    bool isJumping = false;
+    public float velSalto;
+
+    bool isAlive = true;
+
+    private void Start()
     {
+        rbRata = GetComponent<Rigidbody2D>();
+        srRata = GetComponent<SpriteRenderer>();
+    }
+
+    private void FixedUpdate()
+    {
+        float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
+        rbRata.velocity = new Vector2(movimientoHorizontal*velocidadRata,rbRata.velocity.y);
+
+       if (movimientoHorizontal > 0)
+        {
+            srRata.flipX = false;
+        }else if (movimientoHorizontal < 0)
+        {
+            srRata.flipX = true;
+        }
+
+        if (Input.GetButton("Jump") && !isJumping)
+        {
+           
+            isJumping = true;
+            rbRata.velocity = new Vector2(rbRata.velocity.x,0f);
+            rbRata.AddForce(new Vector2(0,velSalto), ForceMode2D.Impulse);
+        }
+
+    }
+
+    private void Update()
+    {
+        if (!isAlive)
+        {
+            Debug.Log("Has muerto ;3");
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+       
+        if (other.gameObject.CompareTag("Suelo"))
+        {
+            isJumping = false;
+            rbRata.velocity = new Vector2(rbRata.velocity.x, 0);
+        }
+    }
+
+    public void perderVida()
+    {
+        isAlive = false;
         
     }
-    public float moveSpeed = 10f;
-    public float jumpHeight = 5f;
-
-    private void Awake()
-    {
-        GameManager.onUpdateGameState += OnGameStateChange;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += Vector3.up * moveSpeed * Time.deltaTime*jumpHeight;
-        }
-      
-    }
-    public void OnGameStateChange(GameManager.Estado estado)
-    {
-        if (estado == GameManager.Estado.Game)
-        {
-            gameObject.SetActive(true);
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        }
-}
 }
