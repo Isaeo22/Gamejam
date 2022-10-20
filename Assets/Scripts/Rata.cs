@@ -8,7 +8,7 @@ public class Rata : MonoBehaviour
     [Range(1, 10)] public float velocidadRata;
     Rigidbody2D rbRata;
     SpriteRenderer srRata;
-    bool isJumping = false;
+    public bool isJumping = false;
     public float velSalto;
     Vector3 posInicial;
 
@@ -60,7 +60,7 @@ public class Rata : MonoBehaviour
         if (other.gameObject.CompareTag("Suelo"))
         {
             isJumping = false;
-            rbRata.velocity = new Vector2(rbRata.velocity.x, 0);
+           
         }
     }
 

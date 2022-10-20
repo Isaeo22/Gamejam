@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PajaroHorizontal : MonoBehaviour
+public class PajaroVertical : MonoBehaviour
 {
     Rigidbody2D rbPajaro;
     SpriteRenderer srPajaro;
-
+    Vector3 posInicial;
     float velPajaro = 5;
     bool dir = true;//true izquierda, false derecha
     Rata rata;
-    Vector3 posInicial;
     void Start()
     {
         rbPajaro = GetComponent<Rigidbody2D>();
         srPajaro = GetComponent<SpriteRenderer>();
         rata = GameObject.Find("Rata").GetComponent<Rata>();
-        rbPajaro.velocity = new Vector2(velPajaro, 0);
-      
+        rbPajaro.velocity = new Vector2(0, velPajaro);
         posInicial = transform.position;
     }
 
@@ -29,13 +27,13 @@ public class PajaroHorizontal : MonoBehaviour
             if (dir)
             {
                 dir = false;
-                rbPajaro.velocity = new Vector2(-velPajaro, 0);
+                rbPajaro.velocity = new Vector2(0, -velPajaro);
                 srPajaro.flipX = true;
             }
             else
             {
                 dir = true;
-                rbPajaro.velocity = new Vector2(velPajaro, 0);
+                rbPajaro.velocity = new Vector2(0, velPajaro);
                 srPajaro.flipX = false;
             }
         }
@@ -51,7 +49,7 @@ public class PajaroHorizontal : MonoBehaviour
     {
         rata.perderVida();
         transform.position = posInicial;
-        rbPajaro.velocity = new Vector2(velPajaro, 0);
+        rbPajaro.velocity = new Vector2(0, velPajaro);
         dir = true;
     }
 }
