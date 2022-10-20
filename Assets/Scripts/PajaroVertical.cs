@@ -22,7 +22,7 @@ public class PajaroVertical : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
 
-        if (other.gameObject.CompareTag("Suelo"))
+        if (other.gameObject.CompareTag("ParedPajaro"))
         {
             if (dir)
             {

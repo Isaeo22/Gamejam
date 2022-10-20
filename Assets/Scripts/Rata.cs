@@ -8,6 +8,7 @@ public class Rata : MonoBehaviour
     [Range(1, 10)] public float velocidadRata;
     Rigidbody2D rbRata;
     SpriteRenderer srRata;
+    //CircleCollider2D cR;
     public bool isJumping = false;
     public float velSalto;
     Vector3 posInicial;
@@ -19,6 +20,7 @@ public class Rata : MonoBehaviour
         rbRata = GetComponent<Rigidbody2D>();
         srRata = GetComponent<SpriteRenderer>();
         posInicial = transform.position;
+       
     }
 
     private void FixedUpdate()
@@ -62,6 +64,12 @@ public class Rata : MonoBehaviour
             isJumping = false;
            
         }
+
+        if (other.gameObject.tag == "ParedPajaro")
+        {
+            Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
     }
 
     public void perderVida()

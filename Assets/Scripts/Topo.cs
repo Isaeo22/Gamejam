@@ -16,7 +16,7 @@ public class Topo : MonoBehaviour
         rbTopo= GetComponent<Rigidbody2D>();
         srTopo=GetComponent<SpriteRenderer>();
         rata = GameObject.Find("Rata").GetComponent<Rata>();
-        velSalto = 8;
+        velSalto = 5;
         posInicial = transform.position;
     }
 
