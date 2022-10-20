@@ -10,6 +10,7 @@ public class Rata : MonoBehaviour
     SpriteRenderer srRata;
     bool isJumping = false;
     public float velSalto;
+    Vector3 posInicial;
 
     bool isAlive = true;
 
@@ -17,6 +18,7 @@ public class Rata : MonoBehaviour
     {
         rbRata = GetComponent<Rigidbody2D>();
         srRata = GetComponent<SpriteRenderer>();
+        posInicial = transform.position;
     }
 
     private void FixedUpdate()
@@ -38,6 +40,7 @@ public class Rata : MonoBehaviour
             isJumping = true;
             rbRata.velocity = new Vector2(rbRata.velocity.x,0f);
             rbRata.AddForce(new Vector2(0,velSalto), ForceMode2D.Impulse);
+           
         }
 
     }
@@ -46,6 +49,8 @@ public class Rata : MonoBehaviour
     {
         if (!isAlive)
         {
+            isAlive = true;
+            transform.position = posInicial;
             Debug.Log("Has muerto ;3");
         }
     }

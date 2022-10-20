@@ -9,12 +9,15 @@ public class Topo : MonoBehaviour
     float velSalto;
     bool isJumping = false;
     Rata rata;
+    Vector3 posInicial;
+    public bool randomizarSalto=false;
     void Start()
     {
         rbTopo= GetComponent<Rigidbody2D>();
         srTopo=GetComponent<SpriteRenderer>();
         rata = GameObject.Find("Rata").GetComponent<Rata>();
-        velSalto = 5;
+        velSalto = 8;
+        posInicial = transform.position;
     }
 
     // Update is called once per frame
@@ -22,7 +25,10 @@ public class Topo : MonoBehaviour
     {
         if (!isJumping)
         {
-            //velSalto = Random.Range(1,10);
+            if (randomizarSalto)
+            {
+                velSalto = Random.Range(3, 10);
+            }
             isJumping = true;
             rbTopo.velocity = new Vector2(rbTopo.velocity.x, 0f);
             rbTopo.AddForce(new Vector2(0, velSalto), ForceMode2D.Impulse);
@@ -40,6 +46,7 @@ public class Topo : MonoBehaviour
 
         if (other.gameObject.CompareTag("Rata"))
         {
+          
             chocarRata();
         }
     }
@@ -47,5 +54,6 @@ public class Topo : MonoBehaviour
     private void chocarRata()
     {
         rata.perderVida();
+        transform.position = posInicial;
     }
 }
