@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] private GameObject botonPausa;
+    //[SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
     private bool juegoPausado = false;
+    private AudioSource musica;
 
+    private void Awake()
+    {
+        musica = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,16 +32,18 @@ public class MenuPausa : MonoBehaviour
     {
         juegoPausado = true;
         Time.timeScale = 0f;
-        botonPausa.SetActive(false);
+        //botonPausa.SetActive(false);
         menuPausa.SetActive(true);
+        musica.Pause();
     }
 
     public void Reanudar()
     {
         juegoPausado = false;
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
+        //botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+        musica.Play();
     }
 
     public void Reiniciar()

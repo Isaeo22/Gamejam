@@ -6,12 +6,13 @@ public class Camara : MonoBehaviour
 {
     public GameObject personaje;
     private Vector3 posicionRelativa;
-
+    public float yOffset;
     // Use this for initialization
     void Start()
     {
 
         posicionRelativa = transform.position - personaje.transform.position;
+        posicionRelativa.y += yOffset;
 
     }
 
