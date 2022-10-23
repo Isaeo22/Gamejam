@@ -13,6 +13,7 @@ public class Rata : MonoBehaviour
     public bool isJumping = false;
     public float velSalto;
     Vector3 posInicial;
+    float movimientoHorizontal = 0;
 
     bool isAlive = true;
 
@@ -27,7 +28,7 @@ public class Rata : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float movimientoHorizontal = Input.GetAxisRaw("Horizontal");
+        movimientoHorizontal = Input.GetAxisRaw("Horizontal");
         rbRata.velocity = new Vector2(movimientoHorizontal*velocidadRata,rbRata.velocity.y);
 
        if (movimientoHorizontal > 0)
@@ -52,6 +53,14 @@ public class Rata : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetAxisRaw("Horizontal") != 0)
+        {
+            animRata.SetBool("RatWalking", true);
+        }
+        else
+        {
+            animRata.SetBool("RatWalking", false);
+        }
         if (!isAlive)
         {
             isAlive = true;
