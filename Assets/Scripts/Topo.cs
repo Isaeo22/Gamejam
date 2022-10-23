@@ -6,6 +6,7 @@ public class Topo : MonoBehaviour
 {
     Rigidbody2D rbTopo;
     SpriteRenderer srTopo;
+    Animator animTopo;
     float velSalto;
     bool isJumping = false;
     Rata rata;
@@ -15,6 +16,7 @@ public class Topo : MonoBehaviour
     {
         rbTopo= GetComponent<Rigidbody2D>();
         srTopo=GetComponent<SpriteRenderer>();
+        animTopo = GetComponent<Animator>();
         rata = GameObject.Find("Rata").GetComponent<Rata>();
         velSalto = 5;
         posInicial = transform.position;
@@ -30,6 +32,8 @@ public class Topo : MonoBehaviour
                 velSalto = Random.Range(3, 10);
             }
             isJumping = true;
+            animTopo.SetBool("jumping", true);
+
             rbTopo.velocity = new Vector2(rbTopo.velocity.x, 0f);
             rbTopo.AddForce(new Vector2(0, velSalto), ForceMode2D.Impulse);
         }
@@ -37,6 +41,7 @@ public class Topo : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        animTopo.SetBool("jumping", false);
 
         if (other.gameObject.CompareTag("Suelo"))
         {

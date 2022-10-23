@@ -8,6 +8,7 @@ public class Rata : MonoBehaviour
     [Range(1, 10)] public float velocidadRata;
     Rigidbody2D rbRata;
     SpriteRenderer srRata;
+    Animator animRata;
     //CircleCollider2D cR;
     public bool isJumping = false;
     public float velSalto;
@@ -19,6 +20,7 @@ public class Rata : MonoBehaviour
     {
         rbRata = GetComponent<Rigidbody2D>();
         srRata = GetComponent<SpriteRenderer>();
+        animRata = GetComponent <Animator>();
         posInicial = transform.position;
        
     }
@@ -30,16 +32,17 @@ public class Rata : MonoBehaviour
 
        if (movimientoHorizontal > 0)
         {
-            srRata.flipX = false;
+            srRata.flipX = true;
         }else if (movimientoHorizontal < 0)
         {
-            srRata.flipX = true;
+            srRata.flipX = false;
         }
 
         if (Input.GetButton("Jump") && !isJumping)
         {
            
             isJumping = true;
+            animRata.SetBool("RatJumping", true);
             rbRata.velocity = new Vector2(rbRata.velocity.x,0f);
             rbRata.AddForce(new Vector2(0,velSalto), ForceMode2D.Impulse);
            
@@ -62,7 +65,8 @@ public class Rata : MonoBehaviour
         if (other.gameObject.CompareTag("Suelo"))
         {
             isJumping = false;
-           
+            animRata.SetBool("RatJumping", false);
+
         }
 
         if (other.gameObject.tag == "ParedPajaro")

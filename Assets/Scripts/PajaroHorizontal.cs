@@ -30,13 +30,13 @@ public class PajaroHorizontal : MonoBehaviour
             {
                 dir = false;
                 rbPajaro.velocity = new Vector2(-velPajaro, 0);
-                srPajaro.flipX = true;
+                srPajaro.flipX = false;
             }
             else
             {
                 dir = true;
                 rbPajaro.velocity = new Vector2(velPajaro, 0);
-                srPajaro.flipX = false;
+                srPajaro.flipX = true;
             }
         }
 
