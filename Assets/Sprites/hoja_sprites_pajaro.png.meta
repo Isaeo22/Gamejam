@@ -108,12 +108,12 @@ TextureImporter:
       name: hoja_sprites_pajaro_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 341
         y: 2756
-        width: 2067
+        width: 1746
         height: 1378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,10 +131,10 @@ TextureImporter:
         serializedVersion: 2
         x: 2067
         y: 2756
-        width: 2067
+        width: 1741
         height: 1378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
