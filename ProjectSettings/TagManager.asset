@@ -8,6 +8,7 @@ TagManager:
   - Rata
   - ParedPajaro
   - HitboxHoyo
+  - "TechoAra\xF1a"
   layers:
   - Default
   - TransparentFX

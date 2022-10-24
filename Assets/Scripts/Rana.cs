@@ -8,7 +8,7 @@ public class Rana : MonoBehaviour
     SpriteRenderer srRana;
 
     float velRana = 1f;
-    bool dir = true;//true izquierda, false derecha
+    public bool dir = true;//true izquierda, false derecha
     Rata rata;
     Vector3 posInicial;
     void Start()
