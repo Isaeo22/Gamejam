@@ -9,7 +9,7 @@ public class Final : MonoBehaviour
     {
         if (other.gameObject.tag == "Rata")
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
 
         }
     }

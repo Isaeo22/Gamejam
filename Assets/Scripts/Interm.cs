@@ -8,6 +8,6 @@ public class Interm : MonoBehaviour
   
     public void cambiarEscena()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
 }

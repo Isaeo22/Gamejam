@@ -12,7 +12,7 @@ public class CambioEscena : MonoBehaviour
     {
         if (other.gameObject.tag == "Rata")
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
 
         }
     }

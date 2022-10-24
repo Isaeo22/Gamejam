@@ -7,7 +7,7 @@ public class CambiaEscenaInter : MonoBehaviour
 {
         public void cambiarEscena()
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);
         }
     
 }
