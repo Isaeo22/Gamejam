@@ -35,6 +35,7 @@ public class MenuPausa : MonoBehaviour
         //botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         musica.Pause();
+        
     }
 
     public void Reanudar()
@@ -44,6 +45,7 @@ public class MenuPausa : MonoBehaviour
         //botonPausa.SetActive(true);
         menuPausa.SetActive(false);
         musica.Play();
+        
     }
 
     public void Reiniciar()
@@ -59,4 +61,10 @@ public class MenuPausa : MonoBehaviour
         Debug.Log("Cerrar juego ");
         Application.Quit();
     }
+
+
+
+
+  
+    
 }
