@@ -83,6 +83,8 @@ public class Rata : MonoBehaviour
             Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
 
+
+
     }
 
     public void perderVida()

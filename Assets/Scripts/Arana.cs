@@ -47,7 +47,7 @@ public class Arana : MonoBehaviour
 
         if (other.gameObject.CompareTag("Suelo"))
         {
-            velAraña = Random.Range(1, 5);
+            velAraña = Random.Range(3, 5);
             rbAraña.gravityScale = 0;
             rbAraña.velocity = new Vector2(0, velAraña);
         

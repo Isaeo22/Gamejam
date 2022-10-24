@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4cea1729854649f43b349a86a17e85e1
+guid: dad474c10b4797a49a6cd9157a01c7d6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hoja sprites polilla_0
+      name: hoja_sprites_lombriz_0
       rect:
         serializedVersion: 2
-        x: 643
-        y: 1400
-        width: 1300
-        height: 1545
+        x: 97
+        y: 0
+        width: 970
+        height: 1378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7b86cfe924becd42a4e18466b0dd134
-      internalID: -2093813137
+      spriteID: eb3b6fe11f7670047bcd9b3227f40d5b
+      internalID: 323636702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoja sprites polilla_1
+      name: hoja_sprites_lombriz_1
       rect:
         serializedVersion: 2
-        x: 3489
-        y: 2835
-        width: 8
-        height: 8
+        x: 1530
+        y: 0
+        width: 970
+        height: 1378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ef6b2230fc19aa45b19d48f5acd7abd
-      internalID: 310810284
+      spriteID: fd431b32898d3bf43a6e5fcff9419f11
+      internalID: -1015902109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoja sprites polilla_2
+      name: hoja_sprites_lombriz_2
       rect:
         serializedVersion: 2
-        x: 3434
-        y: 2584
-        width: 59
-        height: 25
+        x: 2917
+        y: 0
+        width: 970
+        height: 1378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,29 +197,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7705355c68f8c4b8bff942290953c5
-      internalID: 815131917
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hoja sprites polilla_3
-      rect:
-        serializedVersion: 2
-        x: 2273
-        y: 1400
-        width: 1390
-        height: 1545
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fdfd52923c4ede4e8c0da191099574b
-      internalID: -1344020591
+      spriteID: 88000521167a76e4fbed0e6a21b80c0f
+      internalID: 1163793232
       vertices: []
       indices: 
       edges: []
@@ -235,10 +214,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hoja sprites polilla_2: 815131917
-      hoja sprites polilla_3: -1344020591
-      hoja sprites polilla_0: -2093813137
-      hoja sprites polilla_1: 310810284
+      hoja_sprites_lombriz_2: 1163793232
+      hoja_sprites_lombriz_0: 323636702
+      hoja_sprites_lombriz_1: -1015902109
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
