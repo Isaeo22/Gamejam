@@ -36,7 +36,6 @@ public class TextoControles : MonoBehaviour
         float dist = Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
 
         float val = funCuad(dist);
-        Debug.Log(val);
         return val;
     }
 

@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondLvl.unity
     guid: cb779c74bdfdd8a46a9ecba01f27f9a9
+  - enabled: 1
+    path: Assets/Scenes/Intermedio.unity
+    guid: 3b1c0f59e60d1354d814aef352e31907
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: f1310804dfd40d04d9a6a6d978f353aa
+  - enabled: 1
+    path: Assets/Scenes/TextoInterm.unity
+    guid: c7a3d1d1ab082e6458cf872fc3dab6ff
   m_configObjects: {}
