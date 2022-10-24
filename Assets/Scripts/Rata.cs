@@ -73,8 +73,8 @@ public class Rata : MonoBehaviour
        
         if (other.gameObject.CompareTag("Suelo"))
         {
-            isJumping = false;
-            animRata.SetBool("RatJumping", false);
+            //isJumping = false;
+            //animRata.SetBool("RatJumping", false);
 
         }
 
